@@ -13,12 +13,9 @@ class Birthday < Sinatra::Base
   end
 
   get '/info' do
-    p params
     @name = (params[:name])
     @day = (params[:day])
     @month = (params[:month])
-    $birthday1 = (params[:birthday1])
-    p params
     birthday = BirthdayCalc.new(@name,@day,@month)
     erb(:birthday)
   end
