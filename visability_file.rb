@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 require 'date'
 # month = "january"
 # day = 23
 # birthday = Date.parse("#{month}/#{day}")
-month = "January"
+month = 'January'
 monthconverter = {
-    "January" => "1",
-    "february" => 2,
-    "march" => 3,
-    "april" => 4,
-    "may" => 5,
-    "june" => 6,
-    "july" => 7,
-    "august" => 8,
-    "september" => 9,
-    "october" => 10,
-    "november" => 11,
-    "december" => 12
+  'January' => '1',
+  'february' => 2,
+  'march' => 3,
+  'april' => 4,
+  'may' => 5,
+  'june' => 6,
+  'july' => 7,
+  'august' => 8,
+  'september' => 9,
+  'october' => 10,
+  'november' => 11,
+  'december' => 12
 }
-  birthday1= Date.parse("23-#{monthconverter[month]}-2021")
+birthday1 = Date.parse("23-#{monthconverter[month]}-2021")
 
 p birthday1
 # class Birthday
@@ -27,9 +29,9 @@ p birthday1
 #       @day = day
 #       @month = month
 #     end
-    
+
 #     birthday = Date.parse("#{@month}/#{@day}")
-    
+
 #     def days_until_birthday(birthday)
 #         bday = Date.new(Date.today.year, birthday.month, birthday.day)
 #         p bday
@@ -50,7 +52,6 @@ p birthday1
 #     (bday - Date.today).to_i
 #   end
 # p days_until_birthday(birthday)
-
 
 # daynow = Time.now.strftime("%d")
 # monthnow = Time.now.strftime("%m")
@@ -75,16 +76,11 @@ p birthday1
 # 12 => 31
 # }
 
-
-
 # month = "january"
 # month = conversionhash[month]
 # p month
 # month_days  = monthhash[month]
 # p month_days
-
-
-
 
 # if daynow.to_i < birthday.day.to_i
 #  days_to_birthday =  birthday.day.to_i - daynow.to_i
@@ -114,12 +110,8 @@ p birthday1
 #     "december" => 12
 #     }
 
-
-
-
 # month = "january"
 #     day = 05
-
 
 # def month_counter(month, day)
 #     conversionhash = {"january" => 1,
@@ -135,9 +127,9 @@ p birthday1
 #         "november" => 11,
 #         "december" => 12
 #         }
-#         tmonth = Time.new(2021,conversionhash[month],1).month 
+#         tmonth = Time.new(2021,conversionhash[month],1).month
 #         something = Time.new(2021,conversionhash[month],day)
-    
+
 #     if Time.now.month > tmonth
 #         p Time.now - something
 #     else
@@ -147,8 +139,6 @@ p birthday1
 
 # p month_counter(month,day) / 60 /60 /24 /7
 
-
-
 # count_down = day_counter(month,day).to_i / 60 /60 / 24 /7
 # if count_down == 0
 #     puts "Happy Birthday!!"
@@ -156,6 +146,3 @@ p birthday1
 #     puts "its #{count_down} weeks until your birthday"
 # end
 # p day_counter(month, day).to_i / 60 / 60 /24 /7
-
-
-

@@ -1,30 +1,27 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/birthday_calc'
+require './lib/birthday'
 
-class Birthday < Sinatra::Base
+class Birthdayapp < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
 
   get '/' do
-    
     erb(:index)
   end
 
   get '/info' do
-    @name = (params[:name])
-    @day = (params[:day])
-    @month = (params[:month])
-    birthday = BirthdayCalc.new(@name,@day,@month)
+    @name = params[:name]
+    @day = params[:day]
+    @month = params[:month]
+    birthday = Birthday.new(@name, @day, @month)
+    @days_until_birthday = birthday.count_down
     erb(:birthday)
   end
 
- 
-
- 
- 
-
   # start the server if ruby file executed directly
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

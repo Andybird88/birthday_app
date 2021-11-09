@@ -1,13 +1,19 @@
-<!--<h1> Your name is: <%= @name %></h1>
-<h1> The day your were born is: <%= @day %>
-<h1> The month your were born is: <%= @month %> -->
+
+<link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'><style>
+h1 {text-align: center;}
+h1 {border: 3px solid purple;}
+h1 {font-size: 60px}
+h1 {font-family:'Acme'}
+</style>
+<body style="background-color:powderblue;">
 <br>
-<% if $birthday2 == 365 %>  
-<h1>Happy Birthday <%= @name %>!!!! </h1>
+<% if @days_until_birthday == 365 %>  
+<h1 style="color:hotpink"> Happy Birthday <%= @name %>!!!! </h1>
 <% else %>
 <br>
-<h1> Nice to meet you <%= @name %>. It's <%= $birthday2 %> days untill your Birthday! </h1>
+<h1 style="color:jetblack"> Nice to meet you <%= @name %>. It's <%= @days_until_birthday %> days until your Birthday! </h1>
 <% end %>
+</body>
 
 
 
