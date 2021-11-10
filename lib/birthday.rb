@@ -3,12 +3,13 @@
 require 'date'
 
 class Birthday
-  
   def initialize(name, day, month)
     @name = name
     @day = day
     @month = month
-    
+  end
+
+  def convert_month
     monthconverter = {
       'January' => 1,
       'February' => 2,
@@ -26,20 +27,22 @@ class Birthday
     }
     @month = monthconverter[@month]
   end
-  
+
   def format_birthday
-    Date.parse("#{@day}-#{@month}-2021") #method for this?
+    Date.parse("#{@day}-#{@month}-2021")
   end
-  
-  def user_birthday 
-  bday = Date.new(Date.today.year, format_birthday.month, format_birthday.day) #method for this?
-    
-  bday = Date.new(Date.today.year, format_birthday.month, format_birthday.day) + 365 if Date.today >= bday
+
+  def user_birthday
+    bday = Date.new(Date.today.year, format_birthday.month, format_birthday.day)
+
+    if Date.today >= bday
+      Date.new(Date.today.year, format_birthday.month, format_birthday.day) + 365
+    else
+      bday
+    end
   end
 
   def count_down
-   days_until_birthday = (user_birthday - Date.today).to_i
+    (user_birthday - Date.today).to_i
   end
-  
-
 end
