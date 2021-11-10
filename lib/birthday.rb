@@ -26,15 +26,19 @@ class Birthday
     }
     @month = monthconverter[@month]
   end
+  
+  def format_birthday
+    Date.parse("#{@day}-#{@month}-2021") #method for this?
+  end
+  
+  def user_birthday 
+  bday = Date.new(Date.today.year, format_birthday.month, format_birthday.day) #method for this?
+    
+  bday = Date.new(Date.today.year, format_birthday.month, format_birthday.day) + 365 if Date.today >= bday
+  end
 
   def count_down
-    user_birthday = Date.parse("#{@day}-#{@month}-2021") #method for this?
-  
-    bday = Date.new(Date.today.year, user_birthday.month, user_birthday.day)
-    
-    bday = Date.new(Date.today.year, user_birthday.month, user_birthday.day) + 365 if Date.today >= bday
-   
-    days_until_birthday = (bday - Date.today).to_i
+   days_until_birthday = (user_birthday - Date.today).to_i
   end
   
 
